@@ -22,14 +22,15 @@ public class TFacebook {
         // TODO code application logic here
        Metodos tf= new Metodos();
         int op;
+        tf.autorizar();
         do {
          op=Integer.parseInt(JOptionPane.showInputDialog("opcion"));  
          switch(op){
              case 1:
-                 tf.autorizar();
+                 tf.publicar(JOptionPane.showInputDialog("mensaje"));
                  break;
              case 2:
-                 tf.publicar(JOptionPane.showInputDialog("mensaje"));
+                 tf.like();
                  break;
          }
         }while(op!=0);
