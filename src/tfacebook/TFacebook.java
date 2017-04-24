@@ -30,7 +30,7 @@ public class TFacebook {
                  tf.publicar(JOptionPane.showInputDialog("mensaje"));
                  break;
              case 2:
-                 tf.like();
+                 tf.foto();
                  break;
          }
         }while(op!=0);

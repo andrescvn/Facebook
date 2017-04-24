@@ -8,9 +8,13 @@ package tfacebook;
 import facebook4j.Facebook;
 import facebook4j.FacebookException;
 import facebook4j.FacebookFactory;
+import facebook4j.PostUpdate;
 import facebook4j.conf.ConfigurationBuilder;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +29,7 @@ public class Metodos {
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1488249597859934")
                 .setOAuthAppSecret("47f744f194f375b7e66369e2c2d2b911")
-                .setOAuthAccessToken("EAAVJjhyeGF4BAMZA2UWZAxVe5xqpjQWZA2ZCSn8KMH3GJHLhy0UCnSZB32F2nFNauPgG7PfYpCtFZBpVH4CXng7FfChjt3qkZBtkMUOztHZBZA0pCnjClyyqVULc11EXr3IJjqByQd40GIyvSstYZBnYau0y9lKqNYjReZAZBpQoV6ZBSf74w8S8EgA5CYS4DF2amh6MZD")
+                .setOAuthAccessToken("EAAVJjhyeGF4BANGt6ugqZAFXD51Hkah8YxHYW8JSQ9jLiaqPqO7i94iLZArI4vqhgt6qf6FKFHC5838To0DMZA4BnGAi8bBWtj0vqHL9DULXNSKATaBYBfZCWgUy3Rz5ZAR8TXTZAk32NGiAdFIuUDJQCH23O0g7XK97xdWkMopmVTNff0p8TLZCZBt23nKYDMoZD")
                 .setOAuthPermissions("email,publish_stream,publish_actions");
         FacebookFactory ff = new FacebookFactory(cb.build());
         facebook = ff.getInstance();
@@ -46,6 +50,23 @@ public class Metodos {
         } catch (FacebookException ex) {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalStateException ex) {
+            Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void foto(){
+        try {
+            PostUpdate post = null;
+            try {
+                post = new PostUpdate(new URL("http://facebook4j.org"))
+                        .picture(new URL(JOptionPane.showInputDialog("URL")))
+                        .name(JOptionPane.showInputDialog("titulo"))
+                        .caption(JOptionPane.showInputDialog("subtitulo"))
+                        .description(JOptionPane.showInputDialog("descripcion"));
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            facebook.postFeed(post);
+        } catch (FacebookException ex) {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
