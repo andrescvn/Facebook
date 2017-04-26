@@ -32,6 +32,12 @@ public class TFacebook {
              case 2:
                  tf.foto();
                  break;
+             case 3:
+                 tf.buscartema(JOptionPane.showInputDialog("tema"));
+                 break;
+             case 4:
+                 tf.comentarioFoto(JOptionPane.showInputDialog("Mensaje"));
+                 break;
          }
         }while(op!=0);
 
