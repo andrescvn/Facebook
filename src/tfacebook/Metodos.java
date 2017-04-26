@@ -26,7 +26,9 @@ import javax.swing.JOptionPane;
 public class Metodos {
 
     static Facebook facebook;
-
+/**
+ * permission to use facebook api
+ */
     public void autorizar() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
@@ -37,7 +39,10 @@ public class Metodos {
         FacebookFactory ff = new FacebookFactory(cb.build());
         facebook = ff.getInstance();
     }
-
+/**
+ * make a post
+ * @param mensaje massege that u wanna post
+ */
     public void publicar(String mensaje) {
         try {
             facebook.postStatusMessage(mensaje);
@@ -56,6 +61,9 @@ public class Metodos {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    /**
+     * post a pic
+     */
     public void foto(){
         try {
             PostUpdate post = null;
@@ -73,6 +81,10 @@ public class Metodos {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    /** 
+     * make a commet
+     * @param mensaje message that u want to send
+     */
     public void comentarioFoto(String mensaje){
         try {
             facebook.commentPhoto("502857733438316", mensaje);
@@ -80,6 +92,10 @@ public class Metodos {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    /**
+     * find all post from a group
+     * @param mensaje group to find
+     */
     public void buscartema(String mensaje){
         try {
             ResponseList<Group> results = facebook.searchGroups(mensaje);
@@ -89,7 +105,10 @@ public class Metodos {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public void comentriospost(){
+    /**
+     * commets that a post have
+     */
+    public void comentariospost(){
         try {
            ResponseList<Comment> results = facebook.getCommentReplies("100011422827368");
              for(int i=0;i<results.size();i++)
