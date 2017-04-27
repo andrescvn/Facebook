@@ -34,7 +34,7 @@ public class Metodos {
         cb.setDebugEnabled(true)
                 .setOAuthAppId("1488249597859934")
                 .setOAuthAppSecret("47f744f194f375b7e66369e2c2d2b911")
-                .setOAuthAccessToken("EAAVJjhyeGF4BACCv9VRWwZCn4nvE8VuIOxerc23RqiM46HIWtIPGZAi9jJgbr0OnzWpIhAX1wBmGsAGPLQJj0D1CZCQO8br3ZB9vV3Ah7b2VpfL3n6iqZAb6TxZCVYnMtwNZC7JDZB77baRZCPc2ZCPMXv1xEZB2ke0H6tOCRt6bHv2v4c7ScfFUNEhhfPUwaOvo7QZD")
+                .setOAuthAccessToken("EAAVJjhyeGF4BAHDWQ3uoZCTFFlKTRMIjcYp6M9JOFBqgVNX1OCZB67bnKhs9Yt2po7V3GMfUWvZBWjxUNFKnwwzRVCgYrZAI2db0F1AG6tkJPKG7z28R1NvSsdDwq8eXonjWKolDxz7yTFZAzZCiTdzporRIM4L8YZD")
                 .setOAuthPermissions("email,publish_stream,publish_actions");
         FacebookFactory ff = new FacebookFactory(cb.build());
         facebook = ff.getInstance();
