@@ -30,7 +30,7 @@ public class TFacebook {
                  tf.publicar(JOptionPane.showInputDialog("mensaje"));
                  break;
              case 2:
-                 tf.foto();
+                 tf.foto(JOptionPane.showInputDialog("URL"));
                  break;
              case 3:
                  tf.buscartema(JOptionPane.showInputDialog("tema"));

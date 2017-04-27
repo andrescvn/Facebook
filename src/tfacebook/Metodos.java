@@ -64,12 +64,12 @@ public class Metodos {
     /**
      * post a pic
      */
-    public void foto(){
+    public void foto(String url){
         try {
             PostUpdate post = null;
             try {
                 post = new PostUpdate(new URL("http://facebook4j.org"))
-                        .picture(new URL(JOptionPane.showInputDialog("URL")))
+                        .picture(new URL(JOptionPane.showInputDialog(url)))
                         .name(JOptionPane.showInputDialog("titulo"))
                         .caption(JOptionPane.showInputDialog("subtitulo"))
                         .description(JOptionPane.showInputDialog("descripcion"));
